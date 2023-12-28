@@ -45,16 +45,17 @@ body {
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   padding-block: 1rem;
   margin-inline: auto;
   z-index: 9999;
+  top: 0;
+  position: sticky;
+  background-color: white;
 }
 
 nav {
   padding: 5px;
-  top: 0;
-  position: sticky;
 }
 
 nav ul {
@@ -72,6 +73,7 @@ nav a {
   padding: 0.2rem 1rem;
   border-radius: 10px;
   font-size: 1.4rem;
+  color: black;
   font-weight: bold;
   transition: all 0.3s ease-in;
 }
@@ -80,6 +82,46 @@ nav a:hover {
   background-color: orange;
   color: white;
   font-weight: bold;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown .dropbtn {
+  font-size: 1.4rem;
+  padding: 0.2rem 1rem;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 0.2rem 1rem;
+  margin-top: 0.8rem;
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 main {
@@ -95,31 +137,47 @@ main {
   gap: 1rem 2rem;
 }
 
-.home {
-  padding: 6px;
-  background-color: aliceblue;
-  color: white;
-  font-size: 1.8rem;
+#home {
+  position: relative;
   text-align: center;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title,
+.home-detail {
+  color: black;
+  position: relative;
+  z-index: 1;
+}
+
+.home-title {
+  font-size: 2.7rem;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/home.jpeg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.55;
 }
 
 header {
   display: inline;
 }
 
-.home header {
-  text-align: center;
-}
-
-.gambar {
-  width: 100%;
-  max-width: 1200px;
-  object-fit: cover;
-  object-position: center;
-}
-
 .title {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .about img {
@@ -139,6 +197,123 @@ header {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 20px;
+  font-family: cursive;
+}
+
+.gambar-servis img {
+  height: 150px;
+  max-height: 200px;
+}
+
+.servis {
+  display: flex;
+  gap: 4rem;
+  text-align: center;
+}
+
+.servis-button {
+  text-align: center;
+}
+.tombol-servis {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #009aff;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.tombol-servis:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+}
+
+.review {
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.gambar-user {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.gambar-user img {
+  width: 100%;
+}
+
+.user-review {
+  flex: 1;
+}
+
+.nama-user {
+  font-weight: bold;
+}
+
+.isi-review {
+  font-weight: lighter;
+}
+
+.review-button {
+  text-align: center;
+}
+.lebih-banyak-review {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #009aff;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.lebih-banyak-review:hover {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #009aff;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+  color: black;
 }
 
 aside {
@@ -164,8 +339,27 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
+  .home-title {
+    font-size: 2rem;
+  }
+
   nav ul {
     justify-content: center;
+  }
+
+  .navbar img {
+    display: none;
+  }
+
+  .review {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .gambar-user {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 
   main aside {

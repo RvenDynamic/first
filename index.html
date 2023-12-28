@@ -20,7 +20,7 @@
           <li><a href="tel:+62 822-23xx-xxxx">+62 822-23xx-xxxx</a></li>
         </ul>
       </div>
-      <div class="navbar">
+      <div class="navbar" id="navbar">
         <div class="logo">
           <img src="img/logo2.png" alt="Selater | Servis Laptop dan Komputer" />
         </div>
@@ -28,9 +28,15 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Review</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="dropdown" onclick="toggleDropdown()">
+              <a class="dropbtn">Services</a>
+              <div class="dropdown-content">
+                <a href="#laptop">Laptop</a>
+                <a href="#komputer">Komputer</a>
+              </div>
+            </li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -38,12 +44,13 @@
 
     <main>
       <div class="container">
-        <article id="home" class="card">
-          <h1 class="title">Selater | Servis Laptop dan Komputer</h1>
-          <h3 class="home-detail">
-            Servis Cepat dan Terpercaya yang melayani 24 Jam dengan layanan yang
-            tepat dan profesional.
-          </h3>
+        <article id="home" class="card gambar-home">
+          <h1 class="title home-title">Selater | Servis Laptop dan Komputer</h1>
+          <h2 class="home-detail">
+            Servis Cepat dan Terpercaya yang melayani secara profesional dan
+            akurat untuk memberikan pengalaman pelayanan terbaik untuk menjaga
+            perangkat teknologi anda tetap optimal.
+          </h2>
         </article>
 
         <article id="about" class="card">
@@ -76,10 +83,129 @@
             </section>
           </div>
         </article>
+        <article id="servis" class="card">
+          <h1 class="title">Servis</h1>
+          <div class="servis">
+            <section id="laptop">
+              <h2>Laptop</h2>
+              <hr />
+              <div class="gambar-servis">
+                <img src="img/laptop.png" alt="Laptop" />
+              </div>
+              <p>
+                Menangani perbaikan laptop dengan berbagai masalah dan merk.
+              </p>
+              <div class="servis-button">
+                <button class="tombol-servis">Servis Sekarang</button>
+              </div>
+            </section>
+            <section id="komputer">
+              <h2>Komputer</h2>
+              <hr />
+              <div class="gambar-servis">
+                <img src="img/komputer.jpeg" alt="Komputer" />
+              </div>
+              <p>Menangani perbaikan komputer dengan cepat dan akurat</p>
+              <div class="servis-button">
+                <button class="tombol-servis">Servis Sekarang</button>
+              </div>
+            </section>
+          </div>
+        </article>
+        <article id="review" class="card review-card">
+          <h1 class="title">Review</h1>
+          <section>
+            <div class="review">
+              <div class="gambar-user">
+                <img src="img/user1.png" alt="User 1" />
+              </div>
+              <div class="user-review">
+                <div class="nama-user">Firman Ferdiansyah</div>
+                <p class="isi-review">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dignissimos quisquam nemo dicta accusamus reiciendis debitis
+                  tempora necessitatibus magni quasi facilis! Quas, architecto
+                  magnam beatae dolorem eos officia quisquam assumenda velit.
+                </p>
+              </div>
+            </div>
+          </section>
+          <hr />
+          <section>
+            <div class="review">
+              <div class="gambar-user">
+                <img src="img/user2.jpg" alt="User 1" />
+              </div>
+              <div class="user-review">
+                <div class="nama-user">Firman Ferdiansyah</div>
+                <p class="isi-review">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dignissimos quisquam nemo dicta accusamus reiciendis debitis
+                  tempora necessitatibus magni quasi facilis! Quas, architecto
+                  magnam beatae dolorem eos officia quisquam assumenda velit.
+                </p>
+              </div>
+            </div>
+          </section>
+          <hr />
+          <section>
+            <div class="review">
+              <div class="gambar-user">
+                <img src="img/user3.png" alt="User 1" />
+              </div>
+              <div class="user-review">
+                <div class="nama-user">Firman Ferdiansyah</div>
+                <p class="isi-review">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Dignissimos quisquam nemo dicta accusamus reiciendis debitis
+                  tempora necessitatibus magni quasi facilis! Quas, architecto
+                  magnam beatae dolorem eos officia quisquam assumenda velit.
+                </p>
+              </div>
+            </div>
+          </section>
+          <div class="review-button">
+            <button class="lebih-banyak-review">Lebih Banyak</button>
+          </div>
+        </article>
+        <article id="contact" class="card">
+          <h1 class="title">Hubungi Kami</h1>
+          <hr />
+          <form action="#" method="post">
+            <label for="nama">Nama :</label>
+            <input type="text" name="nama" required />
+
+            <label for="noHp">No Hp :</label>
+            <input type="text" name="noHp" required />
+
+            <label for="pesan">Pesan :</label>
+            <textarea name="pesan" id="pesan" rows="4" required></textarea>
+
+            <input type="submit" value="Kirim" />
+          </form>
+        </article>
       </div>
 
       <aside>
-        <div class="contact-us"></div>
+        <div class="jadwal">
+          <div class="gambar-aside">
+            <img src="img/logo2.png" alt="Selater" />
+          </div>
+          <div class="tabel">
+            <table>
+              <tr>
+                <td>Buka</td>
+                <td>:</td>
+                <td>Senin - Sabtu</td>
+              </tr>
+              <tr>
+                <td>Pukul</td>
+                <td>:</td>
+                <td>09:00 - 21:00</td>
+              </tr>
+            </table>
+          </div>
+        </div>
       </aside>
     </main>
     <footer>
@@ -87,5 +213,6 @@
         Copyright &copy; 2023 | Created by Firman Ferdiansyah
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>
